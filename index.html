@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祝：李仁敬 生日快乐</title>
+</head>
+<style>
+    h3{
+        text-align: center;
+        font-style: italic;
+        color: #ff1597;
+    }
+    .trans{
+        color: #fff;
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 10px;
+    }
+    .trans:hover{
+        background-color: rgb(154, 181, 253);
+        color: #fff;
+    }
+    body {
+        background-image: url(./bg3.jpg);
+        padding: 0 12px;
+        margin: 0;
+    }
+    .contai{
+        padding: 30px;
+        background-color: rgba(0,0,0,0.3);
+    }
+    .app {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .danmu {
+        margin-right: 15px;
+    }
+    .danmu-box{
+        position: relative;
+        height: 75px;
+    }
+    .danmu-float {
+        position: absolute;
+        width: 100%;
+    }
+    .danmu-float.top1{
+        top: 0;
+    }
+    .danmu-float.top2{
+        top: 25px;
+    }
+    .danmu-float.top3{
+        top: 50px;
+    }
+    .tb-r {
+        z-index: 11;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: #ef2e2e;
+        padding: 0 5px;
+        color: wheat;
+    }
+    .t1 {
+        font-size: 14px;
+    }
+    .t2 {
+        font-size: 14px;
+        color: violet;
+    }
+</style>
+<body>
+    <audio src="./voice/zh.mp3" id="zh"></audio>
+    <audio src="./voice/de.mp3" id="de"></audio>
+    <audio src="./voice/en.mp3" id="en"></audio>
+    <audio src="./voice/es.mp3" id="es"></audio>
+    <audio src="./voice/fa.mp3" id="fa"></audio>
+    <audio src="./voice/it.mp3" id="it"></audio>
+    <audio src="./voice/jp.mp3" id="jp"></audio>
+    <audio src="./voice/kor.mp3" id="kor"></audio>
+    <audio src="./voice/pt.mp3" id="pt"></audio>
+    <audio src="./voice/ra.mp3" id="ra"></audio>
+    <audio src="./voice/tai.mp3" id="tai"></audio>
+    <div class="app">
+        <h3>祝李仁敬女士 十八岁生日快乐</h1>
+            <div class="danmu-box">
+                <marquee class="danmu-float top1" >
+                    <span class="danmu t1">永远年轻</span>
+                    <span class="danmu t1">一帆风顺</span>
+                </marquee>
+                <marquee class="danmu-float top1" scrolldelay="150">
+                    <span class="danmu t2">日进斗金</span>
+                    <span class="danmu t1">飞黄腾达</span>
+
+                </marquee>
+                <marquee class="danmu-float top2" scrolldelay="100">
+                    <span class="danmu t1">春风得意</span>
+                    <span class="danmu t1">事事顺心</span>
+                </marquee>
+                <marquee class="danmu-float top2" scrolldelay="150">
+                    <span class="danmu t2">升官发财</span>
+                </marquee>
+                <marquee class="danmu-float top2" scrolldelay="250">
+                    <span class="danmu tb-r">拥有男朋友</span>
+                </marquee>
+                <marquee class="danmu-float top3" scrolldelay="110">
+                    <span class="danmu t2">
+                        身体健康
+                    </span>
+                </marquee>
+                <marquee class="danmu-float top3" scrolldelay="200">
+                    <span class="danmu t1">
+                        财运亨通
+                    </span>
+                </marquee>
+            </div>
+            <div class="contai">
+                <p class="trans" onclick="play('zh')">中文: 生日快乐</p>
+                <p class="trans" onclick="play('en')">英文: happy birthday</p>
+                <p class="trans" onclick="play('jp')">日语: お誕生日おめでとうございます</p>
+                <p class="trans" onclick="play('kor')">韩语: 생일 축하</p>
+                <p class="trans" onclick="play('tai')">泰语: สุขสันต์วันเกิด</p>
+                <p class="trans" onclick="play('de')">德语: alles Gute zum Geburtstag</p>
+                <p class="trans" onclick="play('fa')">法语: Bon anniversaire</p>
+                <p class="trans" onclick="play('ra')">俄语: с Днем рожденья</p>
+                <p class="trans" onclick="play('it')">意大利语: buon compleanno</p>
+                <p class="trans" onclick="play('es')">西班牙语: feliz cumpleaños</p>
+                <p class="trans" onclick="play('pt')">葡萄牙语: feliz Aniversário</p>
+            </div>
+    </div>
+</body>
+<script>
+    let audios = document.querySelectorAll('audio');
+    function play(id) {
+        let paused = true;
+        for(let i=0;i<audios.length;i++) {
+            if (!audios[i].paused) {
+                // paused = false
+                audios[i].pause()
+                break
+            }
+        }
+        if (paused) {
+            document.querySelector('#'+id).play()
+        }
+    }
+</script>
+</html>
